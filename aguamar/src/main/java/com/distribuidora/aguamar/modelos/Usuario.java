@@ -1,9 +1,11 @@
 package com.distribuidora.aguamar.modelos;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -20,17 +22,16 @@ private static final long serialVersionUID = 1L;
 	
 	@Id
 	private String login;
-	private String nomeCompleto;
 	private String senha;
 	
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable( 
 	        name = "usuarios_roles", 
 	        joinColumns = @JoinColumn(
 	          name = "usuario_id", referencedColumnName = "login"), 
 	        inverseJoinColumns = @JoinColumn(
 	          name = "role_id", referencedColumnName = "nomeRole")) 
-    private List<Role> roles;
+    private List<Role> roles = new ArrayList<Role>();
 
 	public String getLogin() {
 		return login;
@@ -38,14 +39,6 @@ private static final long serialVersionUID = 1L;
 
 	public void setLogin(String login) {
 		this.login = login;
-	}
-
-	public String getNomeCompleto() {
-		return nomeCompleto;
-	}
-
-	public void setNomeCompleto(String nomeCompleto) {
-		this.nomeCompleto = nomeCompleto;
 	}
 
 	public String getSenha() {
@@ -60,8 +53,8 @@ private static final long serialVersionUID = 1L;
 		return roles;
 	}
 
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
+	public void setRoles(Role role) {
+		roles.add(role);
 	}
 
 	@Override
