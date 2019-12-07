@@ -8,4 +8,6 @@ public interface ClienteRepository extends CrudRepository<Cliente, String>{
 
 	Cliente findByCodigoCliente(int codigoCliente);
 	
+	Cliente findByLogin(String login);
+	
 }

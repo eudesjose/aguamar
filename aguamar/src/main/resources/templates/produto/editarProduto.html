@@ -1,0 +1,62 @@
+<!DOCTYPE>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Editar produto</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<form class="col s12" action="#" th:action="@{/atualizarProduto}"
+				th:object="${produto}" method=post>
+				<div class="row">
+					<div class="col s3"></div>
+					<div class="col s6">
+						<div class="input-field col s3">
+							<input id="nomeProduto" type="hidden" name="nomeProduto" th:value="${produto.nomeProduto}">
+						</div>
+						<div class="input-field col s3">
+							<input id="idProduto" type="hidden" name="idProduto" th:value="${produto.idProduto}">
+						</div>
+					</div>
+					<div class="col s3"></div>
+				</div>
+
+
+				<div class="row">
+					<div class="col s3"></div>
+					<div class="input-field col s6">
+						<input id="descricao" type="text" name="descricao" th:value="${produto.descricao}"> <label
+							for="descricao">Descrição</label>
+					</div>
+					<div class="col s3"></div>
+				</div>
+
+				<div class="row">
+					<div class="col s3"></div>
+					<div class="input-field col s2">
+						<input id="preco" type="text" name="preco" th:value="${produto.preco}"> <label
+							for="preco">Preço</label>
+					</div>
+					<div class="col s3"></div>
+					<div class="col s4">
+						<button class="waves-effect waves-light btn" type="submit">
+							<i class="material-icons left">save</i>Atualizar
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

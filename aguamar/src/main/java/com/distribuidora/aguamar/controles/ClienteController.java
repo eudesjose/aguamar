@@ -34,7 +34,7 @@ public class ClienteController {
 	}
 	
 	@RequestMapping(value="/salvarCliente", method=RequestMethod.POST)
-	public String formulario(Cliente cliente) {
+	public String salvarCliente(Cliente cliente) {
 		clienteRepository.save(cliente);
 		return "redirect:/novoCliente";
 	}
@@ -80,7 +80,7 @@ public class ClienteController {
 	}
 	
 	@PostMapping("atualizarCliente/{codigoCliente}")
-    public String atualizarProduto(@PathVariable("codigoCliente") int codigoCliente, Cliente cliente) {
+    public String atualizarCliente(@PathVariable("codigoCliente") int codigoCliente, Cliente cliente) {
 		clienteRepository.save(cliente);
         return "redirect:/clientes";
     }
