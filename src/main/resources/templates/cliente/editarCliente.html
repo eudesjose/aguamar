@@ -1,0 +1,67 @@
+<!DOCTYPE>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Editar cliente</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<form class="col s12" action="#"
+				th:action="@{/atualizarCliente/{codigoCliente}(codigoCliente=${cliente.codigoCliente})}"
+				th:object="${cliente}" method=post>
+				<div class="row">
+					<div class="col s3"></div>
+					<div class="input-field col s6">
+						<input id="nome" type="text" name="nomeCompleto"
+							th:value="${cliente.nomeCompleto}"> <label for="nome">Nome
+							completo</label>
+					</div>
+					<div class="col s3"></div>
+				</div>
+				<div class="row">
+					<div class="col s3"></div>
+					<div class="input-field col s6">
+						<input id="endereco" type="text" name="endereco"
+							th:value="${cliente.endereco}"> <label for="endereco">Endereço</label>
+					</div>
+					<div class="col s3"></div>
+				</div>
+				<div class="input-field col s1">
+					<input type="hidden" name="codigoCliente"
+						th:value="${cliente.codigoCliente}">
+				</div>
+				<div class="input-field col s1">
+					<input type="hidden" name="autorizacao"
+						th:value="${cliente.autorizacao}">
+				</div>
+				<div class="input-field col s1">
+					<input type="hidden" name="login"
+						th:value="${cliente.login}">
+				</div>
+				<div class="input-field col s1">
+					<input type="hidden" name="senha"
+						th:value="${cliente.senha}">
+				</div>
+				<div class="row">
+					<div class="col s8"></div>
+					<div class="col s4">
+						<button class="waves-effect waves-light btn" type="submit">
+							<i class="material-icons left">save</i>Salvar
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
