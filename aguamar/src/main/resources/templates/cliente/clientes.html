@@ -37,19 +37,21 @@
 					<td><span th:text="${cliente.login}"></span></td>
 					<td><span th:text="${cliente.senha}"></span></td>
 					<td><span th:if="${cliente.autorizacao == false}"><a
-							class="waves-effect waves-light btn"
+							class="waves-effect waves-light btn blue lighten-2"
 							th:href="${(#mvc.url('CC#concederAutorizacao').arg(0, cliente.codigoCliente)).build()}"><i
 								class="material-icons left">check</i></a></span></td>
-					<td><a class="waves-effect waves-light btn"
+					<td><a class="waves-effect waves-light btn blue lighten-2"
 						th:href="${(#mvc.url('CC#editarCliente').arg(0, cliente.codigoCliente)).build()}"><i
 							class="material-icons left">edit</i></a></td>
-					<td><a class="waves-effect waves-light btn"
+					<td><a class="waves-effect waves-light btn blue lighten-2"
 						th:href="${(#mvc.url('CC#excluirCliente').arg(0, cliente.codigoCliente)).build()}"><i
 							class="material-icons left">delete</i></a></td>
 				</tr>
 			</tbody>
 
 		</table>
+		<h2>Opções do sistema</h2>
+		<a href="/" class="waves-effect waves-light btn blue lighten-2"><i class="material-icons left">home</i></a>
 	</div>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

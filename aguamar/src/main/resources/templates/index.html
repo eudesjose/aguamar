@@ -2,10 +2,70 @@
 <html xmlns:th="http://thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Início</title>
 </head>
 
 <body>
-<h1>Index</h1>
+	<nav>
+		<div class="nav-wrapper blue lighten-2">
+			<a href="/" class="brand-logo">Aguamar</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li>
+					<a href="/login"> Entrar</a>
+				</li>
+				<li>
+					<a href="/login?logout"> 
+						<i class="large material-icons">account_circle</i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+		<h1>Aguamar</h1>
+		<div class="row">
+			<div class="col s3"></div>
+			<div class="col s3">
+				<a href="/produtos"><img src="img/icone_produto.png"></a><br> <span>Produtos</span>
+			</div>
+			
+			<div class="col s3">
+				<a href="/clientes"><img src="img/icone_clientes.png"></a><br> <span>Clientes</span>
+			</div>
+			<div class="col s3"></div>
+		</div>
+		
+		<div class="row">
+			<div class="col s3"></div>
+			<div class="col s3">
+				<a href="/pedidos"><img src="img/icone_pedido.png"></a><br> <span>Pedidos</span>
+			</div>
+			<div class="col s3">
+				<a href="/novoUsuario"><img src="img/icone_usuarios.png"></a><br> <span>Usuário</span>
+			</div>
+			<div class="col s3"></div>
+		</div>
+		<h1>Opções do cliente</h1>
+		<div class="row">
+			<div class="col s3"></div>
+			<div class="col s3">
+				<a href="/novoPedido"><img src="img/icone_novo_pedido.png"></a><br> <span>Novo pedido</span>
+			</div>
+			<div class="col s3">
+				<a href="/novoCliente"><img src="img/icone_cadastro.png"></a><br> <span>Novo cadastro</span>
+			</div>
+			<div class="col s3"></div>
+		</div>
+	</div>
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
 </html>

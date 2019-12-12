@@ -14,6 +14,7 @@
 </head>
 <body>
 	<div class="container">
+		<h1>Editar produto</h1>
 		<div class="row">
 			<form class="col s12" action="#" th:action="@{/atualizarProduto}"
 				th:object="${produto}" method=post>
@@ -55,6 +56,9 @@
 				</div>
 			</form>
 		</div>
+		<h2>Opções do sistema</h2>
+		<a href="/" class="waves-effect waves-light btn blue lighten-2"><i class="material-icons left">home</i></a>
+		<a href="/produtos" class="waves-effect waves-light btn blue lighten-2"><i class="material-icons left">list</i></a>
 	</div>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

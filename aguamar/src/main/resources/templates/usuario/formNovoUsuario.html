@@ -12,43 +12,49 @@
 </head>
 
 <body>
-	<div class="row">
-		<form class="col s12" method="post" action="/salvarUsuario">
-			<div class="row">
-				<div class="col s3"></div>
-				<div class="input-field col s3">
-					<input id="login" type="text" name="login"> <label
-						for="login">Nome de usuário</label>
+	<div class="container">
+		<h1>Novo usuário</h1>
+		<div class="row">
+			<form class="col s12" method="post" action="/salvarUsuario">
+				<div class="row">
+					<div class="col s3"></div>
+					<div class="input-field col s3">
+						<input id="login" type="text" name="login"> <label
+							for="login">Nome de usuário</label>
+					</div>
+					<div class="input-field col s3">
+						<input id="senha" type="password" name="senha"> <label
+							for="senha">Senha</label>
+					</div>
+					<div class="col s3"></div>
 				</div>
-				<div class="input-field col s3">
-					<input id="senha" type="password" name="senha"> <label
-						for="senha">Senha</label>
+				<div class="row">
+					<div class="col s3"></div>
+					<div class="col s6">
+						<p>
+							<label> <input name="tipoUsuario" type="radio"
+								value="ADMIN" /> <span>Administrador</span>
+							</label> <label> <input name="tipoUsuario" type="radio"
+								value="ENTREGADOR" /> <span>Entregador</span>
+							</label>
+						</p>
+					</div>
+					<div class="col s3"></div>
 				</div>
-				<div class="col s3"></div>
-			</div>
-			<div class="row">
-				<div class="col s3"></div>
-				<div class="col s6">
-					<p>
-						<label> <input name="tipoUsuario" type="radio"
-							value="ADMIN" /> <span>Administrador</span>
-						</label> <label> <input name="tipoUsuario" type="radio"
-							value="ENTREGADOR" /> <span>Entregador</span>
-						</label>
-					</p>
-				</div>
-				<div class="col s3"></div>
-			</div>
 
-			<div class="row">
-				<div class="col s8"></div>
-				<div class="col s4">
-					<button class="waves-effect waves-light btn" type="submit">
-						<i class="material-icons left">save</i>Cadastrar
-					</button>
+				<div class="row">
+					<div class="col s8"></div>
+					<div class="col s4">
+						<button class="waves-effect waves-light btn blue lighten-2"
+							type="submit">
+							<i class="material-icons left">save</i>Cadastrar
+						</button>
+					</div>
 				</div>
-			</div>
-		</form>
+			</form>
+		</div>
+		<h2>Opções do sistema</h2>
+		<a href="/" class="waves-effect waves-light btn blue lighten-2"><i class="material-icons left">home</i></a>
 	</div>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

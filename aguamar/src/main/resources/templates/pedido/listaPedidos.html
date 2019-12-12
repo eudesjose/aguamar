@@ -12,50 +12,56 @@
 </head>
 
 <body>
-	<div class="row">
-		<h1>Informações da entrega</h1>
-		<form class="col s12" method="post" action="/registrarPedidoEntregue">
-			<table>
-				<thead>
-					<tr>
-						<th>Código do pedido</th>
-						<th>Cliente</th>
-						<th>Endereço</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="pedido : ${pedidos}">
-						<td><span th:text="${pedido.idPedido}"></span></td>
-						<td><span th:text="${pedido.cliente.nomeCompleto}"></span></td>
-						<td><span th:text="${pedido.cliente.endereco}"></span></td>
-						<td><p>
-								<label> <input type="checkbox" name="entregas" th:value="${pedido.idPedido}"/> <span>Entregue</span>
-								</label>
-							</p></td>
-					</tr>
-				</tbody>
-			</table>
-			<button class="waves-effect waves-light btn" type="submit">
-						<i class="material-icons left">send</i>Registrar Entrega
-					</button>
-			<h1>Itens da entrega</h1>
-			<table>
-				<thead>
-					<tr>
-						<th>Código do pedido</th>
-						<th>Produto</th>
-						<th>Quantidade</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="item : ${itens}">
-						<td><span th:text="${item.pedido.idPedido}"></span></td>
-						<td><span th:text="${item.produto.nomeProduto}"></span></td>
-						<td><span th:text="${item.quantidade}"></span></td>
-					</tr>
-				</tbody>
-			</table>
-		</form>
+	<div class="container">
+		<div class="row">
+			<h1>Informações da entrega</h1>
+			<form class="col s12" method="post" action="/registrarPedidoEntregue">
+				<table class="striped blue lighten-2">
+					<thead>
+						<tr>
+							<th>Código do pedido</th>
+							<th>Cliente</th>
+							<th>Endereço</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="pedido : ${pedidos}">
+							<td><span th:text="${pedido.idPedido}"></span></td>
+							<td><span th:text="${pedido.cliente.nomeCompleto}"></span></td>
+							<td><span th:text="${pedido.cliente.endereco}"></span></td>
+							<td><p>
+									<label> <input type="checkbox" name="entregas"
+										th:value="${pedido.idPedido}" /> <span>Entregue</span>
+									</label>
+								</p></td>
+						</tr>
+					</tbody>
+				</table>
+				<br>
+				<button class="waves-effect waves-light btn blue lighten-2" type="submit">
+					<i class="material-icons left">send</i>Registrar Entrega
+				</button>
+				<h1>Itens da entrega</h1>
+				<table class="striped blue lighten-2">
+					<thead>
+						<tr>
+							<th>Código do pedido</th>
+							<th>Produto</th>
+							<th>Quantidade</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="item : ${itens}">
+							<td><span th:text="${item.pedido.idPedido}"></span></td>
+							<td><span th:text="${item.produto.nomeProduto}"></span></td>
+							<td><span th:text="${item.quantidade}"></span></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+		<h2>Opções do sistema</h2>
+		<a href="/" class="waves-effect waves-light btn blue lighten-2"><i class="material-icons left">home</i></a>
 	</div>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

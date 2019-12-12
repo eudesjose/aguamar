@@ -31,8 +31,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		.antMatchers(HttpMethod.GET, "/clientes").hasRole("ADMIN")
 		.antMatchers(HttpMethod.GET, "/novoPedido").hasRole("CLIENTE")
 		.antMatchers(HttpMethod.POST, "/salvarPedido").hasRole("CLIENTE")
-		.antMatchers(HttpMethod.GET, "/pedidos").permitAll()
-		.antMatchers(HttpMethod.POST, "/registrarPedidoEntregue").permitAll()
+		.antMatchers(HttpMethod.GET, "/pedidos").hasRole("ENTREGADOR")
+		.antMatchers(HttpMethod.POST, "/registrarPedidoEntregue").hasRole("ENTREGADOR")
 		.anyRequest().authenticated()
 		.and().formLogin().permitAll()
 		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
@@ -46,6 +46,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 
 	@Override
 	public void configure(WebSecurity web) throws Exception{
-		web.ignoring().antMatchers("/materialize/**", "/style/**");
+		web.ignoring().antMatchers("/materialize/**", "/style/**","/img/**");
 	}
 }
